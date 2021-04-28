@@ -13,6 +13,8 @@ app.use(bodyParser());
 
 app.use(async (ctx) => {
   console.log('收到 Webhook 请求');
+  const body = ctx.request.body;
+
   // 签名密钥
   const secret = secrets.secret;
 
@@ -25,7 +27,7 @@ app.use(async (ctx) => {
   }
 
   const hmac = crypto.createHmac('sha256', secret);
-  hmac.update(Buffer.from(JSON.stringify(ctx.request.body), 'utf8'));
+  hmac.update(Buffer.from(JSON.stringify(body), 'utf8'));
 
   const digest = `sha256=${hmac.digest('hex')}`;
 
@@ -34,11 +36,16 @@ app.use(async (ctx) => {
     return;
   }
 
+  if (body.ref !== 'refs/heads/main') {
+    ctx.status = 200;
+    ctx.body = '非 main 分支，未变更。';
+    return;
+  }
   // 拉取代码
   childProcess.exec('git pull');
 
   ctx.status = 202;
-  ctx.body = 'Accepted';
+  ctx.body = '进行 pull。';
 });
 
 app.listen(5002);
