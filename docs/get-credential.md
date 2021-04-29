@@ -30,7 +30,7 @@ credential = Credential(sessdata="你的 SESSDATA", bili_jct="你的 bili_jct", 
 
 ![](https://pic.imgdb.cn/item/6038d4065f4313ce25346335.jpg)
 
-2. 在工具窗口上方找到 **Applicatio** 选项卡。
+2. 在工具窗口上方找到 **Application** 选项卡。
 
 ![](https://pic.imgdb.cn/item/6038d4425f4313ce253484e4.jpg)
 
