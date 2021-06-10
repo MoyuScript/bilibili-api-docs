@@ -17,7 +17,6 @@ print(sync(v.get_download_url(0)))
 原理其实也很简单，`sync()` 代码如下：
 
 ```python
-
 from typing import Coroutine
 import asyncio
 
