@@ -366,12 +366,6 @@ body.sticky .sidebar-toggle {
   position: relative
 }
 
-@media screen and (max-width: 480px) {
-  .markdown-section {
-    padding: 30px 15px 40px;
-  }
-}
-
 .markdown-section>* {
   box-sizing: border-box;
   font-size: inherit
