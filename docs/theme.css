@@ -362,9 +362,14 @@ body.sticky .sidebar-toggle {
 
 .markdown-section {
   margin: 0 auto;
-  max-width: 80%;
-  padding: 30px 15px 40px;
+  padding: 30px 30px 40px;
   position: relative
+}
+
+@media screen and (max-width: 480px) {
+  .markdown-section {
+    padding: 30px 15px 40px;
+  }
 }
 
 .markdown-section>* {
@@ -755,7 +760,6 @@ body {
 .markdown-section h3,
 .markdown-section h4,
 .markdown-section strong {
-  display: inline-block;
   position: relative;
   color: #2c3e50;
   font-weight: 600;
