@@ -118,3 +118,16 @@ if __name__ == '__main__':
     asyncio.get_event_loop().run_until_complete(v.connect())
 ```
 
+# 示例：获取视频弹幕
+
+```python
+from bilibili_api import video, sync
+
+v = video.Video(bvid='BV1AV411x7Gs')
+
+dms = sync(v.get_danmakus(0))
+
+for dm in dms:
+    print(dm)
+```
+
