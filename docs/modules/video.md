@@ -18,7 +18,7 @@ from bilibili_api import video
 
 ### Functions
 
-#### def \__init__()
+#### def \_\_init\_\_()
 
 | name       | type                 | description                           |
 | ---------- | -------------------- | ------------------------------------- |
@@ -326,7 +326,7 @@ asyncio.get_event_loop().run_until_complete(r.connect())
 
 ### Functions
 
-#### def \__init__()
+#### def \_\_init\_\_()
 
 | name       | type                 | description                                    |
 | ---------- | -------------------- | ---------------------------------------------- |
@@ -362,7 +362,7 @@ asyncio.get_event_loop().run_until_complete(r.connect())
 
 ### Functions
 
-#### def \__init__()
+#### def \_\_init\_\_()
 
 | name         | type              | description                                                  |
 | ------------ | ----------------- | ------------------------------------------------------------ |
@@ -413,7 +413,7 @@ asyncio.get_event_loop().run_until_complete(r.connect())
 
 ### Functions
 
-#### def \__init__()
+#### def \_\_init\_\_()
 
 | name       | type                          | description                                                  |
 | ---------- | ----------------------------- | ------------------------------------------------------------ |
