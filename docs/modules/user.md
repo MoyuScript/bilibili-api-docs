@@ -16,6 +16,8 @@ from bilibili_api import user
 + FAVORATE: 收藏量倒序。
 + VIEW  : 播放量倒序。
 
+---
+
 ## class AudioOrder
 
 **Extends:** enum.Enum
@@ -25,6 +27,8 @@ from bilibili_api import user
 + PUBDATE : 上传日期倒序。
 + FAVORATE: 收藏量倒序。
 + VIEW    : 播放量倒序。
+
+---
 
 ## class ArticleOrder
 
@@ -36,6 +40,8 @@ from bilibili_api import user
 + FAVORATE: 收藏量倒序。
 + VIEW    : 阅读量倒序。
 
+---
+
 ## class ArticleListOrder
 
 **Extends:** enum.Enum
@@ -45,6 +51,8 @@ from bilibili_api import user
 + LATEST: 最近更新倒序。
 + VIEW  : 总阅读量倒序。
 
+---
+
 ## class BangumiType
 
 **Extends:** enum.Enum
@@ -53,6 +61,8 @@ from bilibili_api import user
 
 + BANGUMI: 番剧。
 + DRAMA  : 电视剧/纪录片等。
+
+---
 
 ## class RelationType
 
@@ -66,6 +76,8 @@ from bilibili_api import user
 + BLOCK: 拉黑。
 + UNBLOCK: 取消拉黑。
 + REMOVE_FANS: 移除粉丝。
+
+---
 
 ## class User
 
@@ -226,6 +238,8 @@ from bilibili_api import user
 
 **Returns:** 调用接口返回的内容。
 
+---
+
 ## async def get_self_info()
 
 | name       | type       | description |
@@ -235,6 +249,8 @@ from bilibili_api import user
 获取自己的信息。
 
 **Returns:** 调用接口返回的内容。
+
+---
 
 ## async def create_subscribe_group()
 
@@ -247,6 +263,8 @@ from bilibili_api import user
 
 **Returns:** 调用接口返回的内容。
 
+---
+
 ## async def delete_subscribe_group()
 
 | name       | type       | description |
@@ -257,6 +275,8 @@ from bilibili_api import user
 删除用户关注分组
 
 **Returns:** 调用接口返回的内容。
+
+---
 
 ## async def rename_subscribe_group()
 
@@ -270,6 +290,8 @@ from bilibili_api import user
 
 **Returns:** 调用接口返回的内容。
 
+---
+
 ## async def set_subscribe_group()
 
 | name       | type       | description                         |
@@ -281,4 +303,6 @@ from bilibili_api import user
 设置用户关注分组
 
 **Returns:** 调用接口返回的内容。
+
+---
 

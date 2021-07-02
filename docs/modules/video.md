@@ -264,6 +264,8 @@ from bilibili_api import video
 
 **Returns:** API 调用返回结果。
 
+---
+
 ## class VideoOnlineMonitor
 
 **Extends:** bilibili_api.utils.AsyncEvent.AsyncEvent
@@ -348,6 +350,8 @@ asyncio.get_event_loop().run_until_complete(r.connect())
 
 **Returns:** None
 
+---
+
 ## class VideoUploaderPageObject
 
 视频上传分 P 对象。
@@ -382,6 +386,8 @@ asyncio.get_event_loop().run_until_complete(r.connect())
 获取视频流
 
 **Returns: **io.BufferedIOBase: 视频流
+
+---
 
 ## class VideoUploader
 
@@ -479,3 +485,4 @@ asyncio.get_event_loop().run_until_complete(r.connect())
 
 **Returns:** dict: 包含 bvid 和 aid 的字典。
 
+---
