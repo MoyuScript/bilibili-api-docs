@@ -4,7 +4,15 @@
 + 示例
 	+ [视频](/examples/video.md)
 	+ [用户](/examples/user.md)
+	+ [直播](/examples/live.md)
+	+ [动态](/examples/dynamic.md)
+	+ [评论](/examples/comment.md)
+	+ [专栏](/examples/article.md)
 + API 参考
-	+ [video - 视频](/modules/video.md)
-	+ [user - 用户](/modules/user.md)
-
+	+ [video.py - 视频](/modules/video.md)
+	+ [user.py - 用户](/modules/user.md)
+	+ [live.py - 直播](/modules/live.md)
+	+ [dynamic.py - 动态](/modules/dynamic.md)
+	+ [comment.py - 评论](/modules/comment.md)
+	+ [article.py - 专栏](/modules/article.md)
++ [历史文档](/history.md)
