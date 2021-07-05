@@ -8,6 +8,8 @@
 	+ [动态](/examples/dynamic.md)
 	+ [评论](/examples/comment.md)
 	+ [专栏](/examples/article.md)
+	+ [音频](/examples/audio.md)
+	+ [番剧](/examples/bangumi.md)
 + API 参考
 	+ [video.py - 视频](/modules/video.md)
 	+ [user.py - 用户](/modules/user.md)
@@ -15,4 +17,6 @@
 	+ [dynamic.py - 动态](/modules/dynamic.md)
 	+ [comment.py - 评论](/modules/comment.md)
 	+ [article.py - 专栏](/modules/article.md)
+	+ [audio.py - 音频](/modules/audio.md)
+	+ [bangumi.py - 番剧](/modules/bangumi.md)
 + [历史文档](/history.md)
