@@ -8,3 +8,4 @@ Python 库 [bilibili-api](https://github.com/Passkou/bilibili-api) 的文档。
 并在 `docs/_sidebar.md` 中增加对应目录。
 
 使用技术：[doscify](https://docsify.js.org)
+
