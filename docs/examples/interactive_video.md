@@ -46,11 +46,9 @@ async def save_tree(bvid):
   # 实例化 Credential 类
   credential = Credential(sessdata=SESSDATA, bili_jct=BILI_JCT, buvid3=BUVID3)
 
-  # 实例化 Video 类
-  v = interactive_video.IVideo(bvid=bvid, credential=credential)
 
   # 查询交互视频信息
-  info = await v.get_pages()
+  info = await interactive_video.get_ivideo_pages(bvid=bvid, credential=credential)
   vobjs = reform_videos(info["videos"])
   aid = info["videos"][0]["aid"]
 
@@ -62,7 +60,7 @@ async def save_tree(bvid):
   #print(story)
   
   # 上传情节树
-  graph_result = await v.submit_story_tree(story)
+  graph_result = await interactive_video.submit_story_tree(story_tree=story, credential=credential)
   return graph_result
 
 
