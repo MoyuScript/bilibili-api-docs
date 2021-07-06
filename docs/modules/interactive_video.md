@@ -4,7 +4,7 @@
 from bilibili_api import interactive_video
 ```
 
-## async def submit_story_tree()
+## async def up_submit_story_tree()
 | name       | type                 | description                                       |
 | ---------- | -------------------- | ------------------------------------------------- |
 | story_tree | str                  | 情节树的描述。参考 bilibili_storytree.StoryGraph  |
@@ -14,7 +14,7 @@ from bilibili_api import interactive_video
 
 **Returns:** API 调用返回结果。
 
-## async def get_ivideo_pages()
+## async def up_get_ivideo_pages()
 | name       | type                 | description                           |
 | ---------- | -------------------- | ------------------------------------- |
 | bvid       | str                  | BV 号。                               |
