@@ -6,7 +6,7 @@ from bilibili_api import interactive_video
 
 互动视频相关操作。
 
-## class IVideo(Video)
+## class IVideo
 
 **Extends:** bilibili_api.video.Video
 
@@ -53,5 +53,4 @@ from bilibili_api import interactive_video
 提交情节树。
 
 **Returns:** API 调用返回结果。
-
 
