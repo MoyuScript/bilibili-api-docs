@@ -8,7 +8,9 @@ from bilibili_api import interactive_video
 
 ## class IVideo(Video)
 
-互动视频类，各种对互动视频的操作均在里面。继承了 Video 类。
+**Extends:** bilibili_api.video.Video
+
+互动视频类，各种对互动视频的操作均在里面。
 
 ### Attributes
 
