@@ -4,20 +4,6 @@
 from bilibili_api import interactive_video
 ```
 
-互动视频相关操作。
-
-## class IVideo(Video)
-
-**Extends:** bilibili_api.video.Video
-
-### Functions
-
-#### async def get_pages()
-
-获取分 P 信息。 被屏蔽。
-
-**Returns:** API 调用返回结果。
-
 ## async def submit_story_tree()
 | name       | type                 | description                                       |
 | ---------- | -------------------- | ------------------------------------------------- |
