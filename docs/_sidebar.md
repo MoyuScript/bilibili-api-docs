@@ -4,6 +4,7 @@
 + [配置](/configuration.md)
 + 示例
 	+ [视频](/examples/video.md)
+	+ [互动视频](/examples/interactive_video.md)
 	+ [用户](/examples/user.md)
 	+ [直播](/examples/live.md)
 	+ [动态](/examples/dynamic.md)
@@ -15,6 +16,7 @@
 + API 参考
   + [根模块](/modules/bilibili_api.md)
   + [video.py - 视频](/modules/video.md)
+  + [interactive_video.py - 互动视频](/modules/interactive_video.md)
   + [user.py - 用户](/modules/user.md)
   + [live.py - 直播](/modules/live.md)
   + [dynamic.py - 动态](/modules/dynamic.md)
