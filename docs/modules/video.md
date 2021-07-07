@@ -6,6 +6,8 @@ from bilibili_api import video
 
 视频相关操作。
 
+?> 注意，同时存在 page_index 和 cid 的参数，两者至少提供一个。
+
 ## class Video
 
 视频类，各种对视频的操作均在里面。
@@ -90,9 +92,10 @@ from bilibili_api import video
 
 #### async def get_download_url()
 
-| name       | type | description          |
-| ---------- | ---- | -------------------- |
-| page_index | int  | 分 P 号，从 0 开始。 |
+| name       | type          | description                          |
+| ---------- | ------------- | ------------------------------------ |
+| page_index | int, optional | 分 P 号，从 0 开始。Defaults to None |
+| cid        | int, optional | 分 P 的 ID。Defaults to None         |
 
 获取视频下载信息。
 
@@ -130,9 +133,10 @@ from bilibili_api import video
 
 #### async def get_danmaku_view():
 
-| name       | type | description          |
-| ---------- | ---- | -------------------- |
-| page_index | int  | 分 P 号，从 0 开始。 |
+| name       | type          | description                          |
+| ---------- | ------------- | ------------------------------------ |
+| page_index | int, optional | 分 P 号，从 0 开始。Defaults to None |
+| cid        | int, optional | 分 P 的 ID。Defaults to None         |
 
 获取弹幕设置、特殊弹幕、弹幕数量、弹幕分段等信息。
 
@@ -142,8 +146,9 @@ from bilibili_api import video
 
 | name       | type                    | description                                               |
 | ---------- | ----------------------- | --------------------------------------------------------- |
-| page_index | int                     | 分 P 号，从 0 开始。                                      |
+| page_index | int, optional           | 分 P 号，从 0 开始。Defaults to None                      |
 | date       | datetime.Date, optional | 指定日期后为获取历史弹幕，精确到年月日。Defaults to None. |
+| cid        | int, optional           | 分 P 的 ID。Defaults to None                              |
 
 获取弹幕。
 
@@ -153,8 +158,9 @@ from bilibili_api import video
 
 | name       | type                    | description                                               |
 | ---------- | ----------------------- | --------------------------------------------------------- |
-| page_index | int                     | 分 P 号，从 0 开始。                                      |
+| page_index | int, optional           | 分 P 号，从 0 开始。Defaults to None                      |
 | date       | datetime.Date, optional | 指定日期后为获取历史弹幕，精确到年月日。Defaults to None. |
+| cid        | int, optional           | 分 P 的 ID。Defaults to None                              |
 
 获取特定月份存在历史弹幕的日期。
 
@@ -162,10 +168,11 @@ from bilibili_api import video
 
 #### async def has_liked_danmakus()
 
-| name       | type      | description            |
-| ---------- | --------- | ---------------------- |
-| page_index | int       | 分 P 号，从 0 开始。   |
-| ids        | List[int] | 要查询的弹幕 ID 列表。 |
+| name       | type          | description                          |
+| ---------- | ------------- | ------------------------------------ |
+| page_index | int, optional | 分 P 号，从 0 开始。Defaults to None |
+| ids        | List[int]     | 要查询的弹幕 ID 列表。               |
+| cid        | int, optional | 分 P 的 ID。Defaults to None         |
 
 是否已点赞弹幕。
 
@@ -173,10 +180,11 @@ from bilibili_api import video
 
 #### async def send_danmaku()
 
-| name       | type    | description          |
-| ---------- | ------- | -------------------- |
-| page_index | int     | 分 P 号，从 0 开始。 |
-| danmaku    | Danmaku | Danmaku 类。         |
+| name       | type          | description                          |
+| ---------- | ------------- | ------------------------------------ |
+| page_index | int, optional | 分 P 号，从 0 开始。Defaults to None |
+| danmaku    | Danmaku       | Danmaku 类。                         |
+| cid        | int, optional | 分 P 的 ID。Defaults to None         |
 
 发送弹幕。
 
@@ -184,11 +192,12 @@ from bilibili_api import video
 
 #### async def like_danmaku()
 
-| name       | type           | description                 |
-| ---------- | -------------- | --------------------------- |
-| page_index | int            | 分 P 号，从 0 开始。        |
-| dmid       | int            | 弹幕 ID。                   |
-| status     | bool, optional | 点赞状态。Defaults to True. |
+| name       | type           | description                          |
+| ---------- | -------------- | ------------------------------------ |
+| page_index | int, optional  | 分 P 号，从 0 开始。Defaults to None |
+| dmid       | int            | 弹幕 ID。                            |
+| status     | bool, optional | 点赞状态。Defaults to True.          |
+| cid        | int, optional  | 分 P 的 ID。Defaults to None         |
 
 点赞弹幕。
 

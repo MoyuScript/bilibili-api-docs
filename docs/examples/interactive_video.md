@@ -1,4 +1,96 @@
-# 示例：提交情节树
+# 示例：获取剧情图所有节点
+
+用途：下载所有节点视频信息、获取剧情图结构。
+
+需要一定水平才能看懂。
+
+```python
+from bilibili_api import interactive_video, sync
+import json
+
+BVID = 'BV1Dt411N7LY'
+
+async def main():
+    # 获取剧情图版本号
+    graph_version = await interactive_video.get_graph_version(BVID)
+
+    # 存储顶点信息
+    edges_info = {}
+
+    # 使用队列来遍历剧情图，初始为 None 是为了从初始顶点开始
+    queue = [None]
+
+    def createEdge(edge_id: int):
+        """
+        创建节点信息到 edges_info
+        """
+        edges_info[edge_id] = {
+            "title": None,
+            "cid": None,
+            "option": None
+        }
+
+    while queue:
+        # 出队
+        edge_id = queue.pop()
+
+        if edge_id in edges_info and edges_info[edge_id]['title'] is not None and edges_info[edge_id]['cid'] is not None:
+            # 该情况为已获取到所有信息，说明是跳转到之前已处理的顶点，不作处理
+            continue
+
+        # 获取顶点信息，最大重试 3 次
+        retry = 3
+        while True:
+            try:
+                node = await interactive_video.get_edge_info(BVID, graph_version, edge_id)
+
+                # 打印当前顶点信息
+                print(node['edge_id'], node['title'])
+                break
+            except Exception as e:
+                retry -= 1
+                if retry < 0:
+                    raise e
+
+        # 检查节顶点是否在 edges_info 中，本次步骤得到 title 信息
+        if node['edge_id'] not in edges_info:
+            # 不在，新建
+            createEdge(node['edge_id'])
+
+        # 设置 title
+        edges_info[node['edge_id']]['title'] = node['title']
+
+        # 起始顶点，需要用额外技巧获得 cid
+        if edge_id is None:
+            for s in node['story_list']:
+                if s['edge_id'] == 1:
+                    edges_info[node['edge_id']]['cid'] = s['cid']
+
+        # 无可达顶点，即不能再往下走了，类似树的叶子节点
+        if 'questions' not in node['edges']:
+            continue
+
+        # 遍历所有可达顶点
+        for q in node['edges']['questions']:
+            for c in q['choices']:
+                # 该步骤获取顶点的 cid（视频分 P 的 ID）
+                if c['id'] not in edges_info:
+                    createEdge(c['id'])
+
+                edges_info[c['id']]['cid'] = c['cid']
+                edges_info[c['id']]['option'] = c['option']
+
+                # 所有可达顶点 ID 入队
+                queue.insert(0, c['id'])
+
+    print(json.dumps(edges_info, indent=2, ensure_ascii=False))
+
+sync(main())
+```
+
+
+
+# 示例：提交情节图
 
 * `best_story.py`
 

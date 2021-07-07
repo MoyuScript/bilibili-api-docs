@@ -65,6 +65,12 @@ from bilibili_api import article
 
 **Returns:** API 调用返回结果。
 
+#### async def get_all()
+
+一次性获取专栏尽可能详细数据，包括原始内容、标签、发布时间、标题、相关专栏推荐等		。
+
+**Returns:** API 调用返回结果。
+
 #### async def set_like()
 
 | name   | type           | description                |
