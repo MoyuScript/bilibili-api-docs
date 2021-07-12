@@ -215,14 +215,17 @@ Websocket 实时获取直播弹幕
 + VIEW: 直播间人气更新
 + ALL: 所有事件
 + DISCONNECT: 断开连接（传入连接状态码参数）
++ TIMEOUT: 心跳响应超时
 
 ### Attributes
 
-| name            | type           | description |
-| --------------- | -------------- | ----------- |
-| room_display_id | int            | 房间展示 ID |
-| logger          | logging.Logger | 日志记录    |
-| credential      | Credential     | 凭据        |
+| name            | type           | description                                 |
+| --------------- | -------------- | ------------------------------------------- |
+| room_display_id | int            | 房间展示 ID                                 |
+| logger          | logging.Logger | 日志记录                                    |
+| credential      | Credential     | 凭据                                        |
+| max_retry       | int            | 连接出错后最大重试次数. Defaults to 5       |
+| retry_after     | int            | 连接出错后重试间隔时间（秒）. Defaults to 1 |
 
 ### Functions
 
@@ -233,6 +236,8 @@ Websocket 实时获取直播弹幕
 | room_display_id | int                  | 房间展示 ID                                    |
 | debug           | bool, optional       | 调试模式，将输出更多信息。. Defaults to False. |
 | credential      | Credential, optional | 凭据. Defaults to None.                        |
+| max_retry       | int, optional        | 连接出错后最大重试次数. Defaults to 5          |
+| retry_after     | int, optional        | 连接出错后重试间隔时间（秒）. Defaults to 1    |
 
 #### def get_status()
 
