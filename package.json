@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Passkou/bilibili-api-docs.git"
+    "url": "git+https://github.com/MoyuScript/bilibili-api-docs.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Passkou/bilibili-api-docs/issues"
+    "url": "https://github.com/MoyuScript/bilibili-api-docs/issues"
   },
-  "homepage": "https://github.com/Passkou/bilibili-api-docs#readme",
+  "homepage": "https://github.com/MoyuScript/bilibili-api-docs#readme",
   "dependencies": {
     "docsify-cli": "^4.4.3",
     "koa": "^2.13.1",

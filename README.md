@@ -1,6 +1,6 @@
 # bilibili-api-docs
 
-Python 库 [bilibili-api](https://github.com/Passkou/bilibili-api) 的文档。
+Python 库 [bilibili-api](https://github.com/MoyuScript/bilibili-api) 的文档。
 
 请向 `dev` 分支发起 PR。
 
