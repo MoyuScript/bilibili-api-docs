@@ -66,20 +66,20 @@ async def main():
     	# 获取当前页数的粉丝列表
         followers = await my_user.get_followers(pn=page)
 	
-	# 循环当前页数的粉丝列表
+	      # 循环当前页数的粉丝列表
         for i in followers["list"]:
-            follower_counts += 1
+          follower_counts += 1
 	    
-            uid = int(i["mid"])
-	    name = i["uname"]
-            u = user.User(uid=uid, credential=credential)
+          uid = int(i["mid"])
+	        name = i["uname"]
+          u = user.User(uid=uid, credential=credential)
 	    
-	    # 移除粉丝
-	    print(f"Removing {name}, uid:{uid}. Count: {follower_counts}")
-            await u.modify_relation(relation=RelationType.REMOVE_FANS)
+	        # 移除粉丝
+	        print(f"Removing {name}, uid:{uid}. Count: {follower_counts}")
+          await u.modify_relation(relation=RelationType.REMOVE_FANS)
 	    
-	    # 防止触发412错误
-            await asyncio.sleep(1)
+	        # 防止触发412错误
+          await asyncio.sleep(1)
 	    
 	# 下一页
         page += 1
