@@ -306,3 +306,17 @@ from bilibili_api import user
 
 ---
 
+## async def get_self_history()
+
+| name          | type          | description                         |
+| ------------- | ------------- | ----------------------------------- |
+| page_num      | int, optional | 页码数. Defaults to 1               |
+| per_page_item | int, optional | 每页多少条历史记录, Defaults to 100 |
+| credential    | Credential    | 凭据                                |
+
+获取用户浏览历史记录
+
+**Returns:** 返回当前页的指定历史记录列表。
+
+---
+
