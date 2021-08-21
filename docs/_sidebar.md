@@ -13,6 +13,7 @@
 	+ [音频](/examples/audio.md)
 	+ [番剧](/examples/bangumi.md)
 	+ [收藏夹](/examples/favorite_list.md)
+	+ [视频上传](/examples/video_uploader.md)
 + API 参考
   + [根模块](/modules/bilibili_api.md)
   + [video.py - 视频](/modules/video.md)
@@ -26,4 +27,5 @@
   + [bangumi.py - 番剧](/modules/bangumi.md)
   + [favorite_list.py - 收藏夹](/modules/favorite_list.md)
   + [app.py - 手机 APP](/modules/app.md)
+  + [video_uploader.py - 视频上传](/modules/video_uploader.md)
 + [历史文档](/history.md)
