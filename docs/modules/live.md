@@ -156,10 +156,9 @@ from bilibili_api import live
 
 #### async def ban_user()
 
-| name | type          | description                     |
-| ---- | ------------- | ------------------------------- |
-| uid  | int           | 用户 UID                        |
-| hour | int, optional | 封禁时长（小时）. Defaults to 1 |
+| name | type | description |
+| ---- | ---- | ----------- |
+| uid  | int  | 用户 UID    |
 
 封禁用户
 
@@ -169,7 +168,7 @@ from bilibili_api import live
 
 | name     | type | description                               |
 | -------- | ---- | ----------------------------------------- |
-| block_id | int  | 封禁用户时会返回该封禁事件的 ID，使用该值 |
+| block_id | int  | 封禁事件 ID，使用 `get_black_list()` 获取 |
 
 解封用户
 

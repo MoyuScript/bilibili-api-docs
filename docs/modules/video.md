@@ -8,6 +8,14 @@ from bilibili_api import video
 
 ?> 注意，同时存在 page_index 和 cid 的参数，两者至少提供一个。
 
+## class DanmakuOperatorType(Enum)
+
+弹幕操作枚举
+
++ DELETE - 删除弹幕
++ PROTECT - 保护弹幕
++ UNPROTECT - 取消保护弹幕
+
 ## class Video
 
 视频类，各种对视频的操作均在里面。
@@ -200,6 +208,17 @@ from bilibili_api import video
 | cid        | int, optional  | 分 P 的 ID。Defaults to None         |
 
 点赞弹幕。
+
+#### async operate_danmaku()
+
+| name       | type                | description                          |
+| ---------- | ------------------- | ------------------------------------ |
+| page_index | int, optional       | 分 P 号，从 0 开始。Defaults to None |
+| dmids      | List[int]           | 弹幕 ID 列表。                       |
+| type_      | DanmakuOperatorType | 操作类型                             |
+| cid        | int, optional       | 分 P 的 ID。Defaults to None         |
+
+操作弹幕（如删除、保护等）。
 
 **Returns:** API 调用返回结果。
 
