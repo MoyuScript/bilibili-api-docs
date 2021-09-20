@@ -47,3 +47,42 @@ async def main():
 sync(main())
 ```
 
+# 示例：移除所有粉丝
+```python
+from bilibili_api import Credential, user, sync
+from bilibili_api.user import RelationType
+
+credential = Credential(sessdata="", bili_jct="")
+my_user = user.User(uid=UID, credential=credential)
+
+async def main():
+    follower_counts = 0
+    page = 1
+    
+    total_followers = (await my_user.get_relation_info())["follower"]
+    
+    # 因为请求一次 get_followers 只能获取 20 个粉丝，所以要做一个检查
+    while follower_counts < total_followers:
+    	# 获取当前页数的粉丝列表
+        followers = await my_user.get_followers(pn=page)
+	
+	      # 循环当前页数的粉丝列表
+        for i in followers["list"]:
+          follower_counts += 1
+	    
+          uid = int(i["mid"])
+	        name = i["uname"]
+          u = user.User(uid=uid, credential=credential)
+	    
+	        # 移除粉丝
+	        print(f"Removing {name}, uid:{uid}. Count: {follower_counts}")
+          await u.modify_relation(relation=RelationType.REMOVE_FANS)
+	    
+	        # 防止触发 412 错误
+          await asyncio.sleep(1)
+	    
+	# 下一页
+        page += 1
+	
+sync(main())
+```
