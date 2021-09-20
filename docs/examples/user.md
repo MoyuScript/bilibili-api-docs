@@ -78,7 +78,7 @@ async def main():
 	        print(f"Removing {name}, uid:{uid}. Count: {follower_counts}")
           await u.modify_relation(relation=RelationType.REMOVE_FANS)
 	    
-	        # 防止触发412错误
+	        # 防止触发 412 错误
           await asyncio.sleep(1)
 	    
 	# 下一页
