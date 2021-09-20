@@ -133,6 +133,7 @@ from bilibili_api import video_uploader
   "desc": "str, 视频简介。",
   "desc_format_id": 0,
   "dynamic": "str, 动态信息。",
+  "mission_id": "int, 参加活动 ID，若不参加不要提供该项",
   "interactive": 0,
   "open_elec": "int, 是否展示充电信息。1 为是，0 为否。",
   "no_reprint": "int, 显示未经作者授权禁止转载，仅当为原创视频时有效。1 为启用，0 为关闭。",
@@ -162,3 +163,14 @@ meta 保留字段：`videos`, `cover`
 #### async def abort()
 
 中断上传
+
+## async def get_missions()
+
+| name       | type                 | description             |
+| ---------- | -------------------- | ----------------------- |
+| tid        | int, optional        | 分区 ID. Defaults to 0. |
+| credential | Credential, optional | 凭据. Defaults to None. |
+
+获取活动信息
+
+**Returns:** dict: API 调用返回结果

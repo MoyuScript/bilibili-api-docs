@@ -292,6 +292,41 @@ from bilibili_api import video
 
 **Returns:** API 调用返回结果。
 
+#### async def submit_subtitle()
+
+| name       | type | description                                                  |
+| ---------- | ---- | ------------------------------------------------------------ |
+| lan        | str  | 字幕语言代码，参考 http://www.lingoes.cn/zh/translator/langcode.htm |
+| data       | dict | 字幕数据                                                     |
+| submit     | bool | 是否提交，不提交为草稿                                       |
+| sign       | bool | 是否署名                                                     |
+| page_index | int  | 分 P 索引. Defaults to None.                                 |
+| cid        | cid  | 分 P id. Defaults to None.                                   |
+
+上传字幕
+
+字幕数据 data 参考：
+
+```json
+{
+	"font_size": "float: 字体大小，默认 0.4",
+	"font_color": "str: 字体颜色，默认 \"#FFFFFF\"",
+	"background_alpha": "float: 背景不透明度，默认 0.5",
+	"background_color": "str: 背景颜色，默认 \"#9C27B0\"",
+	"Stroke": "str: 描边，目前作用未知，默认为 \"none\"",
+	"body": [
+    {
+      "from": "int: 字幕开始时间（秒）",
+      "to": "int: 字幕结束时间（秒）",
+      "location": "int: 字幕位置，默认为 2",
+      "content": "str: 字幕内容"
+    }
+  ]
+}
+```
+
+**Returns:** API 调用返回结果。
+
 ---
 
 ## class VideoOnlineMonitor
