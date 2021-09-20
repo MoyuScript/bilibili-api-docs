@@ -61,7 +61,7 @@ async def main():
     
     total_followers = (await my_user.get_relation_info())["follower"]
     
-    # 因为请求一次get_followers只能获取20个粉丝，所以要做一个检查
+    # 因为请求一次 get_followers 只能获取 20 个粉丝，所以要做一个检查
     while follower_counts < total_followers:
     	# 获取当前页数的粉丝列表
         followers = await my_user.get_followers(pn=page)
