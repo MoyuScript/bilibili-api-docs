@@ -166,7 +166,7 @@ from bilibili_api import live
 
 #### async def get_gift_common()
 
-获取当前直播间内的普通礼物列表，此api指返回 `gift_id`，不包含礼物 `price` 参数
+获取当前直播间内的普通礼物列表，此 API 只返回 `gift_id`，不包含礼物 `price` 参数
 
 **Returns:** API 调用返回结果
 
@@ -269,7 +269,7 @@ from bilibili_api import live
 | price         | int           | 礼物单价            |
 | storm_beat_id | int, optional | 未知. Defaults to 0 |
 
-在直播间赠送银瓜子礼物，辣条的`gift_id`为`1`
+在直播间赠送银瓜子礼物，辣条的 `gift_id` 为 `1`
 
 **Returns:** API 调用返回结果
 
@@ -387,11 +387,11 @@ Websocket 实时获取直播弹幕
 
 | name           | type          | description                  |
 | -------------- | ------------- | ---------------------------- |
-| room_id        | int, optional | 房间显示id. Defaults to None |
-| area_id        | int, optional | 子分区id. Defaults to None   |
-| area_parent_id | int, optional | 父分区id. Defaults to None   |
+| room_id        | int, optional | 房间显示 ID. Defaults to None |
+| area_id        | int, optional | 子分区 ID. Defaults to None   |
+| area_parent_id | int, optional | 父分区 ID. Defaults to None   |
 
-  获取所有礼物的信息，包括礼物 id、名称、价格、等级等。
+  获取所有礼物的信息，包括礼物 ID、名称、价格、等级等。
 
   同时填了 `room_id`、`area_id`、`area_parent_id`，则返回一个较小的 json，只包含该房间、该子区域、父区域的礼物。
 
