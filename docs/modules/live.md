@@ -154,6 +154,32 @@ from bilibili_api import live
 
 **Returns:** API 调用返回结果
 
+#### async def get_general_info()
+
+| name   | type          | description              |
+| ------ | ------------- | ------------------------ |
+| act_id | int, optional | 未知. Defaults to 100061 |
+
+获取自己在该房间的大航海信息, 比如是否开通, 等级等
+
+**Returns:** API 调用返回结果
+
+#### async def get_gift_common()
+
+获取当前直播间内的普通礼物列表，此api指返回 `gift_id`，不包含礼物 `price` 参数
+
+**Returns:** API 调用返回结果
+
+#### async def get_gift_special()
+
+| name   | type | description                           |
+| ------ | ---- | ------------------------------------- |
+| tab_id | int  | 礼物类型.   2：特权礼物， 3：定制礼物 |
+
+获取当前直播间内的特殊礼物列表
+
+**Returns:** API 调用返回结果
+
 #### async def ban_user()
 
 | name | type | description |
@@ -174,6 +200,26 @@ from bilibili_api import live
 
 **Returns:** API 调用返回结果
 
+#### async def receive_reward()
+
+| name         | type | description             |
+| ------------ | ---- | ----------------------- |
+| receive_type | int  | 领取类型. Defaults to 2 |
+
+领取自己在直播间内所有可领取的航海日志奖励
+
+**Returns:** API 调用返回结果
+
+#### async def sign_up_dahanghai()
+
+| name    | type          | description              |
+| ------- | ------------- | ------------------------ |
+| task_id | int, optional | 任务id. Defaults to 1447 |
+
+航海日志每日签到
+
+**Returns:** API 调用返回结果
+
 #### async def send_danmaku()
 
 | name    | type    | description |
@@ -181,6 +227,49 @@ from bilibili_api import live
 | danmaku | Danmaku | 弹幕类      |
 
 直播间发送弹幕
+
+**Returns:** API 调用返回结果
+
+#### asyc def send_gift_from_bag()
+
+| name          | type          | description             |
+| ------------- | ------------- | ----------------------- |
+| uid           | int           | 赠送用户的 UID          |
+| bag_id        | int           | 礼物背包 ID             |
+| gift_id       | int           | 礼物 ID                 |
+| gift_num      | int           | 赠送礼物数量            |
+| storm_beat_id | int, optional | 未知. Defaults to 0     |
+| price         | int, optional | 礼物单价. Defaults to 0 |
+
+直播间赠送背包中的礼物
+
+**Returns:** API 调用返回结果
+
+#### asyc def send_gift_gold()
+
+| name          | type          | description         |
+| ------------- | ------------- | ------------------- |
+| uid           | int           | 赠送用户的 UID      |
+| gift_id       | int           | 礼物 ID             |
+| gift_num      | int           | 赠送礼物数量        |
+| price         | int           | 礼物单价            |
+| storm_beat_id | int, optional | 未知. Defaults to 0 |
+
+在直播间赠送金瓜子礼物，礼物id可通过 `get_gift_commom` 或 `get_gift_special` 或 `get_gift_config` 获取.
+
+**Returns:** API 调用返回结果
+
+#### asyc def send_gift_silver()
+
+| name          | type          | description         |
+| ------------- | ------------- | ------------------- |
+| uid           | int           | 赠送用户的 UID      |
+| gift_id       | int           | 礼物 ID             |
+| gift_num      | int           | 赠送礼物数量        |
+| price         | int           | 礼物单价            |
+| storm_beat_id | int, optional | 未知. Defaults to 0 |
+
+在直播间赠送银瓜子礼物，辣条的`gift_id`为`1`
 
 **Returns:** API 调用返回结果
 
@@ -265,6 +354,60 @@ Websocket 实时获取直播弹幕
 | credential | Credential | 凭据        |
 
 获取自己直播等级、排行等信息
+
+**Returns:** API 调用返回结果
+
+## async def get_self_live_info()
+
+| name       | type       | description |
+| ---------- | ---------- | ----------- |
+| credential | Credential | 凭据        |
+
+获取自己的粉丝牌、大航海等信息
+
+**Returns:** API 调用返回结果
+
+## async def get_self_bag()
+
+| name       | type       | description |
+| ---------- | ---------- | ----------- |
+| credential | Credential | 凭据        |
+
+获取自己的直播礼物包裹信息
+
+**Returns:** API 调用返回结果
+
+## async def get_area_info()
+
+获取所有分区信息
+
+**Returns:** API 调用返回结果
+
+## async def get_gift_config()
+
+| name           | type          | description                  |
+| -------------- | ------------- | ---------------------------- |
+| room_id        | int, optional | 房间显示id. Defaults to None |
+| area_id        | int, optional | 子分区id. Defaults to None   |
+| area_parent_id | int, optional | 父分区id. Defaults to None   |
+
+  获取所有礼物的信息，包括礼物 id、名称、价格、等级等。
+
+  同时填了 `room_id`、`area_id`、`area_parent_id`，则返回一个较小的 json，只包含该房间、该子区域、父区域的礼物。
+
+  但即使限定了三个条件，仍然会返回约 1.5w 行的 json。不加限定则是 2.8w 行。
+
+**Returns:** API 调用返回结果
+
+## async def get_self_dahanghai_info()
+
+| name       | type          | description              |
+| ---------- | ------------- | ------------------------ |
+| page       | int, optional | 页数. Defaults to 1      |
+| page_size  | int, optional | 每页数量. Defaults to 10 |
+| credential | Credential    | 凭据                     |
+
+获取自己开通的大航海列表
 
 **Returns:** API 调用返回结果
 
