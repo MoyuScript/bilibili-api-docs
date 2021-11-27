@@ -195,7 +195,7 @@ from bilibili_api import live
 | page      | int, optional | 页码. Defaults to 1      |
 | page_size | int, optional | 每页数量. Defaults to 30 |
 
-#### 获取关注列表中未在直播的直播间信息，包括上次开播时间，上次开播的类别，直播间公告，是否有录播等。
+获取关注列表中未在直播的直播间信息，包括上次开播时间，上次开播的类别，直播间公告，是否有录播等。
 
 #### async def ban_user()
 
